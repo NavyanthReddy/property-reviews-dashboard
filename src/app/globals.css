@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Flex Living brand colors */
+.text-flex-green {
+  color: #2F5233;
+}
+
+.bg-flex-green {
+  background-color: #2F5233;
+}
+
+.border-flex-green {
+  border-color: #2F5233;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Review card styles */
+.review-card {
+  transition: all 0.2s ease-in-out;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Rating stars */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+}
+
+.star {
+  color: #fbbf24;
+  font-size: 1.2em;
+}
+
+.star.empty {
+  color: #e5e7eb;
+}
+
+/* Dashboard specific styles */
+.dashboard-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Status badges */
+.status-approved {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-pending {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.status-rejected {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+/* Brand colors */
+.text-flex-green-dark {
+  color: #1A2E1D;
+}
+
+.bg-flex-green-dark {
+  background-color: #1A2E1D;
+}
+
+.border-flex-green-dark {
+  border-color: #1A2E1D;
+}
+
+.hover\:bg-flex-green-dark:hover {
+  background-color: #1A2E1D;
+}
+
+/* Component styles */
+.flex-card {
+  @apply bg-white rounded-2xl shadow-sm border border-gray-200 transition-all duration-200;
+}
+
+.flex-card:hover {
+  @apply shadow-lg;
+}
+
+.flex-button-primary {
+  @apply bg-flex-green text-white px-6 py-3 rounded-lg font-semibold hover:bg-flex-green-dark transition-colors duration-200;
+}
+
+.flex-button-secondary {
+  @apply border border-gray-900 text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-900 hover:text-white transition-colors duration-200;
+}
